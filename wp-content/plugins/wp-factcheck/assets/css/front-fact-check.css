@@ -1,0 +1,122 @@
+.wpfc-factcheck {
+    padding: 0;
+    margin: 16px 0;
+    display: flex;
+    align-items: flex-start;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.wpfc-factcheck .wpfc-column {
+    padding: 16px 25px;
+    width: 100%;
+}
+
+.wpfc-factcheck .wpfc-claim,
+.wpfc-factcheck .wpfc-author,
+.wpfc-factcheck .wpfc-verdict,
+.wpfc-factcheck .wpfc-explainer {
+    display: flex;
+    align-items: flex-start;
+    font-size: 16px;
+}
+
+.wpfc-factcheck .wpfc-claim::before,
+.wpfc-factcheck .wpfc-author::before,
+.wpfc-factcheck .wpfc-verdict::before,
+.wpfc-factcheck .wpfc-explainer::before {
+    font-family: 'dashicons';
+    font-size: 52px;
+    color: silver;
+    margin-right: 12px;
+    vertical-align: top;
+}
+
+.wpfc-factcheck .wpfc-claim::before {
+    content: "\f205";
+}
+
+.wpfc-factcheck .wpfc-author::before {
+    content: "\f338";
+}
+
+.wpfc-factcheck .wpfc-explainer::before {
+    content: "\f109";
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-column-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 0 0 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-column-content {
+    padding: 0 0 16px 0;
+    font-size: 16px;
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-column-content p {
+    font-size: 18px;
+    font-style: normal;
+    padding-bottom: 5px;
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-author {
+    font-size: 12px;
+    padding-bottom: 16px;
+    color: grey;
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-source {
+    font-size: 14px;
+    padding-bottom: 16px;
+}
+
+
+.wpfc-factcheck .wpfc-column .wpfc-source .wpfc-column-content {
+    color: #777;
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-verdict .wpfc-rating {
+    font-size: 36px;
+    font-weight: 600;
+    color: #777;
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-verdict.wpfc-unknown::before {
+    content: "\f159";
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-verdict.wpfc-incorrect::before {
+    content: "\f153";
+}
+
+.wpfc-factcheck .wpfc-column .wpfc-verdict.wpfc-correct::before {
+    content: "\f12a";
+}
+
+@media screen and ( max-width: 600px ) {
+    .wpfc-factcheck {
+        display: block;
+    }
+    
+    .wpfc-factcheck .wpfc-column {
+        padding: 0 12px;
+        width: 100%;
+    }
+
+    .wpfc-factcheck .wpfc-column:last-child {
+        padding-bottom: 12px;
+    }
+
+    .wpfc-factcheck .wpfc-column .wpfc-column-content {
+        padding: 0;
+    }
+
+    .wpfc-factcheck .wpfc-column .wpfc-verdict .wpfc-rating {
+        font-size: 32px;
+    }
+    
+}

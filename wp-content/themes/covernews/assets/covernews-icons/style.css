@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'covernews-icons';
+  src:  url('fonts/covernews-icons.eot?wf149x');
+  src:  url('fonts/covernews-icons.eot?wf149x#iefix') format('embedded-opentype'),
+    url('fonts/covernews-icons.ttf?wf149x') format('truetype'),
+    url('fonts/covernews-icons.woff?wf149x') format('woff'),
+    url('fonts/covernews-icons.svg?wf149x#covernews-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+
+.af-search-wrap .fa-search::before,
+.author-links .fa-user-circle,
+.author-links .fa-clock,
+.author-links .fa-comment,
+.author-links .fa-eye,
+.em-post-format .fa-video,
+.em-post-format .fa-images,
+.em-post-format .fa-camera,
+#scroll-up .fa-angle-up,
+.menu .fa-angle-up,
+.menu .fa-angle-down,
+.slick-arrow.fa-angle-up,
+.slick-arrow.fa-angle-down,
+.slick-arrow.fa-angle-right,
+.slick-arrow.fa-angle-left,
+.covernews-widget.fa-angle-up,
+.covernews-widget.fa-angle-down,
+.covernews-widget.fa-angle-right,
+.covernews-widget.fa-angle-left,
+[class^="covernews-icon-"], [class*=" covernews-icon-"] {
+
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'covernews-icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.covernews-icon-shopping-cart:before {
+  content: "\f07a";
+}
+.covernews-icon-tiktok:before {
+  content: "\e900";
+}
+.covernews-icon-messenger:before {
+  content: "\e901";
+}
+.covernews-icon-github:before {
+  content: "\e902";
+}
+.author-links .fa-user-circle::before,
+.covernews-icon-circle-user-regular:before {
+  content: "\e903";
+}
+.author-links .fa-clock::before,
+.covernews-icon-clock-regular:before {
+  content: "\e904";
+}
+.author-links .fa-eye::before,
+.covernews-icon-eye-regular:before {
+  content: "\e905";
+}
+.af-search-wrap .fa-search::before,
+.covernews-icon-search:before {
+  content: "\e906";
+}
+.em-post-format .fa-images::before,
+.covernews-icon-image:before,
+.covernews-icon-photo:before,
+.covernews-icon-picture-o:before {
+  content: "\e907";
+}
+.author-links .fa-comment::before,
+.covernews-icon-comment-o:before {
+  content: "\e908";
+}
+.em-post-format .fa-camera::before,
+.covernews-icon-camera:before {
+  content: "\f030";
+}
+
+.em-post-format .fa-video::before,
+.covernews-icon-video-camera:before {
+  content: "\f03d";
+}
+.covernews-icon-twitter:before {
+  content: "\f099";
+}
+.covernews-icon-facebook:before ,
+.covernews-icon-facebook-f:before {
+  content: "\f09a";
+}
+.covernews-icon-pinterest:before {
+  content: "\f0d2";
+}
+.covernews-icon-google-plus:before {
+  content: "\f0d5";
+}
+.covernews-icon-linkedin:before {
+  content: "\f0e1";
+}
+
+body.rtl .sub-menu .menu-item-has-children a .covernews-icon-angle-down:before,
+.slick-arrow.fa-angle-left::before,
+.covernews-widget.fa-angle-left::before,
+.covernews-icon-angle-left:before {
+  content: "\f104";
+}
+
+.sub-menu .menu-item-has-children a .covernews-icon-angle-down:before,
+.slick-arrow.fa-angle-right::before,
+.covernews-widget.fa-angle-right::before,
+.covernews-icon-angle-right:before {
+  content: "\f105";
+}
+.menu .fa-angle-up::before,
+#scroll-up .fa-angle-up::before,
+.slick-arrow.fa-angle-up::before,
+.covernews-widget.fa-angle-up::before,
+.covernews-icon-angle-up:before {
+  content: "\f106";
+}
+.menu .fa-angle-down::before,
+.slick-arrow.fa-angle-down::before,
+.covernews-widget.fa-angle-down::before,
+.covernews-icon-angle-down:before {
+  content: "\f107";
+}
+.covernews-icon-youtube-play:before {
+  content: "\f16a";
+}
+.covernews-icon-stack-overflow:before {
+  content: "\f16c";
+}
+.covernews-icon-instagram:before {
+  content: "\f16d";
+}
+.covernews-icon-tumblr:before {
+  content: "\f173";
+}
+.covernews-icon-dribbble:before {
+  content: "\f17d";
+}
+.covernews-icon-vk:before {
+  content: "\f189";
+}
+.covernews-icon-slack:before {
+  content: "\f198";
+}
+.covernews-icon-wordpress:before {
+  content: "\f19a";
+}
+.covernews-icon-behance:before {
+  content: "\f1b4";
+}
+.covernews-icon-spotify:before {
+  content: "\f1bc";
+}
+.covernews-icon-whatsapp:before {
+  content: "\f232";
+}
+.covernews-icon-vimeo:before {
+  content: "\f27d";
+}
+.covernews-icon-reddit-alien:before {
+  content: "\f281";
+}

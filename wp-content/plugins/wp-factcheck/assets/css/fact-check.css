@@ -1,0 +1,107 @@
+/* Metabox */
+.metabox-row {
+    padding: 8px 0;
+}
+
+.metabox-row:first-child {
+    padding-top: 0;
+}
+
+.metabox-col.left {
+    border-right: 1px solid #ccd0d4;
+}
+
+.metabox-col .metabox {
+    padding: 16px 12px;
+}
+
+.metabox-row label,
+.metabox-row input,
+.metabox-row select {
+    display: block;
+}
+
+.metabox-row label {
+    margin: 0 0 6px 0;
+}
+
+.metabox-row input[type=text],
+.metabox-row textarea {
+    margin: 0;
+    width: 100%;
+}
+
+/* Settings */
+.wpfc-settings {
+    display: flex;
+    margin-top: 12px;
+    justify-content: space-between;
+}
+
+.wpfc-setting-column {
+    width: 49%;
+    padding: 0;
+}
+
+.wpfc-option {
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+
+.wpfc-setting-column .wpfc-option-title {
+    background: #f5f5f5;
+    color: grey;
+    padding: 12px 25px;
+    margin: 0;
+    border-bottom: 1px solid #d0d0d0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.wpfc-setting-column .wpfc-option-content {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.wpfc-setting-column .wpfc-option-row {
+    padding: 12px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.wpfc-setting-column .wpfc-option-row:last-child {
+    border-bottom: none;
+}
+
+.wpfc-setting-column .wpfc-option-details {
+    font-size: 14px;
+    color: grey;
+}
+
+.wpfc-setting-column .wpfc-inline-option {
+    text-align: center;
+}
+
+.wpfc-setting-column .wpfc-inline-option .wpfc-icon {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    display: flex;
+    margin-top: 12px;
+    width: 50px;
+    height: 50px;
+}
+
+.wpfc-setting-column .wpfc-inline-option .wpfc-icon span.dashicons {
+    font-size: 48px;
+}

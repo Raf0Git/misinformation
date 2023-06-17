@@ -1,0 +1,322 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Factcheck\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-12 08:19+0000\n"
+"PO-Revision-Date: 2021-11-05 12:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.2; wp-5.5"
+
+#: inc/custom-post-type.php:16
+msgid "Add New"
+msgstr "Ajouter"
+
+#: inc/custom-post-type.php:8
+#| msgid "Add New Fact-checking"
+msgid "Add New Fact-check"
+msgstr "Ajouter un fact-check"
+
+#: inc/custom-post-type.php:7
+#| msgid "Fact-checking"
+msgctxt "Add New on Toolbar"
+msgid "Fact-check"
+msgstr "Fact-check"
+
+#: inc/custom-post-type.php:6
+#| msgid "Fact-checkings"
+msgctxt "Admin Menu text"
+msgid "Fact-checks"
+msgstr "Fact-checks"
+
+#: inc/custom-post-type.php:12
+#| msgid "All Fact-checkings"
+msgid "All Fact-checks"
+msgstr "Tous les fact-checks"
+
+#: inc/save-settings.php:5
+msgid "An error occured while saving settings"
+msgstr "Une erreur est survenue pendant la sauvegarde des préférences"
+
+#: inc/filters.php:60 inc/meta-boxes.php:46
+msgid "Author"
+msgstr "Auteur"
+
+#: inc/meta-boxes.php:57
+msgid "Author Type"
+msgstr "Type"
+
+#: inc/menu.php:99
+msgid "Choose a color for the background of the box."
+msgstr "Choisissez une couleur d'arrière-plan"
+
+#: inc/menu.php:109
+msgid "Choose a color for the border of the box."
+msgstr "Choisissez une couleur de bordure"
+
+#: inc/menu.php:129
+msgid "Choose a color for the content."
+msgstr "Choisissez une couleur de texte pour le contenu"
+
+#: inc/menu.php:139
+msgid "Choose a color for the icons."
+msgstr "Choisissez une couleur pour les icônes"
+
+#: inc/menu.php:119
+msgid "Choose a color for the titles."
+msgstr "Choisissez une couleur de texte pour les titres"
+
+#: inc/meta-boxes.php:104
+msgid "Choose a verdict"
+msgstr "Sélectionnez un verdict"
+
+#: inc/menu.php:75
+msgid "Choose the font you want to use on content."
+msgstr "Choisissez la police à utiliser pour le contenu"
+
+#: inc/menu.php:61
+msgid "Choose the font you want to use on titles."
+msgstr "Choisissez la couleur de texte pour les titres"
+
+#: inc/filters.php:58 inc/meta-boxes.php:6 inc/meta-boxes.php:35
+msgid "Claim"
+msgstr "Affirmation"
+
+#: inc/menu.php:93
+msgid "Color Options"
+msgstr "Options de couleur"
+
+#: inc/filters.php:43 inc/meta-boxes.php:92 inc/structured-data.php:34
+msgid "Correct"
+msgstr "Correct"
+
+#. Description of the plugin
+msgid ""
+"Create fact-checking articles with the possibility to add other useful "
+"information, like the claim, its source, the verdict and the explainer."
+msgstr ""
+"Créez des articles de fact-checking avec la possibilité d'ajouter des "
+"informations utiles telles que l'affirmation examinée, sa source, le verdict "
+"et des explications supplémentaires"
+
+#: inc/menu.php:17
+msgid "Display Options"
+msgstr "Options d'affichage"
+
+#: inc/menu.php:48
+msgid "Do you want to display icons?"
+msgstr "Voulez-vous afficher les icônes ?"
+
+#: inc/menu.php:23
+msgid "Do you want to display the fact-check details above the post?"
+msgstr ""
+"Voulez-vous afficher les détails du fact-check au dessus de l'articles ?"
+
+#: inc/custom-post-type.php:10
+#| msgid "Edit Fact-checking"
+msgid "Edit Fact-check"
+msgstr "Modifier le fact-check"
+
+#: inc/meta-boxes.php:120
+msgid "Explainer"
+msgstr "Explication"
+
+#. Author of the plugin
+msgid "Fotso Fonkam"
+msgstr "Fotso Fonkam"
+
+#: inc/menu.php:35
+msgid "How do you want to display the fact-checking details?"
+msgstr "Comment voulez-vous afficher les détails du fact-check ?"
+
+#. Author URI of the plugin
+msgid "http://www.iamfotso.cm/a-propos/"
+msgstr "http://www.iamfotso.cm/a-propos/"
+
+#. URI of the plugin
+msgid "http://www.iamfotso.cm/projects/wp-factcheck/"
+msgstr "http://www.iamfotso.cm/projects/wp-factcheck/"
+
+#: inc/filters.php:23 inc/meta-boxes.php:88 inc/structured-data.php:18
+msgid "Incorrect"
+msgstr "Incorrect"
+
+#: inc/filters.php:38 inc/meta-boxes.php:91 inc/structured-data.php:30
+msgid "Mostly Correct"
+msgstr "Globalement correct"
+
+#: inc/filters.php:28 inc/meta-boxes.php:89 inc/structured-data.php:22
+msgid "Mostly Incorrect"
+msgstr "Globalement incorrect"
+
+#: inc/custom-post-type.php:9
+#| msgid "New Fact-checking"
+msgid "New Fact-check"
+msgstr "Nouveau fact-check"
+
+#: inc/menu.php:28
+msgid "No"
+msgstr "Non"
+
+#: inc/custom-post-type.php:17
+#| msgid "No fact-checkings found in Trash."
+msgid "No fact-checks found in Trash."
+msgstr "Aucun fact-check dans la corbeille"
+
+#: inc/custom-post-type.php:15
+#| msgid "No fact-checkings found."
+msgid "No fact-checks found."
+msgstr "Aucun fact-check trouvé."
+
+#: inc/meta-boxes.php:62
+msgid "Organisation"
+msgstr "Organisation"
+
+#: inc/custom-post-type.php:18
+#| msgid "Fact-checking Cover Image"
+msgctxt ""
+"Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Fact-check Cover Image"
+msgstr "Image mise en avant"
+
+#: inc/custom-post-type.php:23
+#| msgid "Insert into fact-checking"
+msgctxt ""
+"Overrides the “Insert into post”/”Insert into page” phrase (used when "
+"inserting media into a post). Added in 4.4"
+msgid "Insert into fact-check"
+msgstr "Insérez dans l'article de fact-check"
+
+#: inc/custom-post-type.php:20
+msgctxt ""
+"Overrides the “Remove featured image” phrase for this post type. Added in 4.3"
+msgid "Remove cover image"
+msgstr "Supprimer l'image mise en avant"
+
+#: inc/custom-post-type.php:19
+msgctxt ""
+"Overrides the “Set featured image” phrase for this post type. Added in 4.3"
+msgid "Set cover image"
+msgstr "Définir l'image mise en avant"
+
+#: inc/custom-post-type.php:24
+#| msgid "Uploaded to this fact-checking"
+msgctxt ""
+"Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used "
+"when viewing media attached to a post). Added in 4.4"
+msgid "Uploaded to this fact-check"
+msgstr "Téléversez dans cet article de fact-check"
+
+#: inc/custom-post-type.php:21
+msgctxt ""
+"Overrides the “Use as featured image” phrase for this post type. Added in 4.3"
+msgid "Use as cover image"
+msgstr "Utiliser comme image mise en avant"
+
+#: inc/custom-post-type.php:14
+#| msgid "Parent Fact-checkings:"
+msgid "Parent Fact-checks:"
+msgstr "Fact-check parent"
+
+#: inc/filters.php:33 inc/meta-boxes.php:90 inc/structured-data.php:26
+msgid "Partially Correct"
+msgstr "A moitié correct"
+
+#: inc/meta-boxes.php:61
+msgid "Person"
+msgstr "Personne"
+
+#: inc/custom-post-type.php:4
+#| msgid "Fact-checkings"
+msgctxt "Post type general name"
+msgid "Fact-checks"
+msgstr "Fact-checks"
+
+#: inc/custom-post-type.php:5
+#| msgid "Fact-checking"
+msgctxt "Post type singular name"
+msgid "Fact-check"
+msgstr "Fact-check"
+
+#: inc/menu.php:153
+msgid "Save Options"
+msgstr "Enregistrer les réglages"
+
+#: inc/custom-post-type.php:25
+#| msgid "Filter fact-checkings list"
+msgctxt ""
+"Screen reader text for the filter links heading on the post type listing "
+"screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter fact-checks list"
+msgstr "Trier la liste de fact-checks"
+
+#: inc/custom-post-type.php:27
+#| msgid "Fact-checkings list"
+msgctxt ""
+"Screen reader text for the items list heading on the post type listing "
+"screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Fact-checks list"
+msgstr "Liste de fact-checking"
+
+#: inc/custom-post-type.php:26
+#| msgid "Fact-checkings list navigation"
+msgctxt ""
+"Screen reader text for the pagination heading on the post type listing "
+"screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Fact-checks list navigation"
+msgstr "Liste de fact-checks"
+
+#: inc/custom-post-type.php:13
+#| msgid "Search Fact-checkings"
+msgid "Search Fact-checks"
+msgstr "Rechercher des fact-checks"
+
+#: inc/menu.php:3 inc/menu.php:11
+msgid "Settings"
+msgstr "Réglages"
+
+#: inc/save-settings.php:29
+msgid "Settings were successfully saved"
+msgstr "Vos réglages ont été enregistrés"
+
+#: inc/meta-boxes.php:71
+msgid "Source/URL"
+msgstr "Source/URL"
+
+#: inc/custom-post-type.php:22
+#| msgid "Fact-checking archives"
+msgctxt ""
+"The post type archive label used in nav menus. Default “Post Archives”. "
+"Added in 4.4"
+msgid "Fact-check archives"
+msgstr "Archives de Fact-checks"
+
+#: inc/filters.php:69 inc/meta-boxes.php:14 inc/meta-boxes.php:99
+msgid "Verdict"
+msgstr "Verdict"
+
+#: inc/custom-post-type.php:11
+#| msgid "View Fact-checking"
+msgid "View Fact-check"
+msgstr "Voir le fact-check"
+
+#. Name of the plugin
+msgid "WP Factcheck"
+msgstr "WP Factcheck"
+
+#: inc/menu.php:26
+msgid "Yes"
+msgstr "Oui"
+
+#: inc/activate.php:6
+msgid ""
+"You have to upgrade your WordPress version before you can use this plugin"
+msgstr ""
+"Vous devez mettre votre version de WordPress à jour avant d'utiliser ce "
+"plugin"

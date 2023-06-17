@@ -1,0 +1,106 @@
+# Translation of Plugins - Membership Plugin &#8211; Restrict Content - Development (trunk) in Italian
+# This file is distributed under the same license as the Plugins - Membership Plugin &#8211; Restrict Content - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-08-13 13:53:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.4\n"
+"Language: it\n"
+"Project-Id-Version: Plugins - Membership Plugin &#8211; Restrict Content - Development (trunk)\n"
+
+#: legacy/includes/settings.php:83
+msgid "Authors"
+msgstr "Autori"
+
+#. Plugin Name of the plugin
+#: core/includes/admin/settings/settings.php:60
+msgid "Restrict Content"
+msgstr "Restrict Content"
+
+#: core/includes/admin/settings/settings.php:1323
+#: legacy/includes/settings.php:151
+msgid "Save Options"
+msgstr "Salva opzioni"
+
+#: legacy/includes/settings.php:97
+msgid "Subscribers"
+msgstr "Sottoscrittori"
+
+#: legacy/includes/settings.php:100
+msgid "Message displayed when a user does not have permission to view Subscriber restricted content"
+msgstr "Messaggio mostrato quando un utente non ha il permesso di accedere a un contenuto riservato ai Sottoscrittori"
+
+#: legacy/includes/settings.php:93
+msgid "Message displayed when a user does not have permission to view Contributor restricted content"
+msgstr "Messaggio mostrato quando un utente non ha il permesso di accedere a un contenuto riservato ai Collaboratori"
+
+#: legacy/includes/settings.php:90
+msgid "Contributors"
+msgstr "Collaboratori"
+
+#: legacy/includes/settings.php:86
+msgid "Message displayed when a user does not have permission to view Author restricted content"
+msgstr "Messaggio mostrato quando un utente non ha il permesso di accedere a un contenuto riservato agli Autori"
+
+#: legacy/includes/settings.php:79
+msgid "Message displayed when a user does not have permission to view Editor restricted content"
+msgstr "Messaggio mostrato quando un utente non ha il permesso di accedere a un contenuto riservato agle Editori"
+
+#: legacy/includes/settings.php:76
+msgid "Editors"
+msgstr "Editori"
+
+#: legacy/includes/settings.php:72
+msgid "Message displayed when a user does not have permission to view Administrator restricted content"
+msgstr "Messaggio mostrato quando un utente non ha il permesso di accedere a un contenuto riservato agli Amministratori"
+
+#: legacy/includes/settings.php:65
+msgid "User Level Restriction Messages"
+msgstr "Messaggi di protezione per i livelli utente"
+
+#: legacy/includes/settings.php:51
+msgid "Restricted Message"
+msgstr "Messaggio di protezione"
+
+#: legacy/includes/settings.php:48
+msgid "Short Code Messages"
+msgstr "Messaggi shortcode"
+
+#: core/includes/admin/settings/settings.php:81 legacy/includes/settings.php:36
+msgid "Options saved"
+msgstr "Opzioni salvate"
+
+#: legacy/includes/settings.php:23 legacy/includes/settings.php:185
+msgid "Restrict Content Settings"
+msgstr "Impostazioni Restrict Content"
+
+#: legacy/includes/metabox.php:27
+msgid "Choose the user level that can see this page / post"
+msgstr "Seleziona il livello utente necessario per poter visualizzare questa pagina / articolo"
+
+#: legacy/includes/metabox.php:24
+msgid "User Level"
+msgstr "Livello utente"
+
+#: legacy/includes/metabox.php:39
+msgid "Hide from Feed?"
+msgstr "Nascondi nel feed?"
+
+#: legacy/includes/settings.php:69
+msgid "Administrators"
+msgstr "Amministratori"
+
+#: legacy/includes/settings.php:60
+msgid "The <strong>{userlevel}</strong> tag will be automatically replaced with the permission level needed."
+msgstr "Il tag <strong>{userlevel}</strong> sarà automaticamente sostituito con il livello di autorizzazione necessario."
+
+#: legacy/includes/settings.php:59
+msgid "When using the [restrict ... ] .... [/restrict] Short Code, this is the message displayed when a user does not have the appropriate permissions."
+msgstr "Quando si utilizza lo shortcode [restrict ... ] .... [/restrict], questo messaggio viene visualizzato se un utente non ha l'opportuna autorizzazione."
+
+#: legacy/includes/metabox.php:42
+msgid "Hide the excerpt of this post / page from the Feed?"
+msgstr "Nascondi il riassunto di questo articolo / pagina nel feed?"

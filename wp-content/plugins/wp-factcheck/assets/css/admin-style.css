@@ -1,0 +1,193 @@
+.wpfc-box {
+    margin: 0;
+    padding: 0;
+
+}
+
+.wpfc-box .wpfc-row {
+    margin: 0 0 16px 0;
+    padding: 0;
+    background: #FFF;
+}
+
+.wpfc-box .wpfc-inner-row {
+    padding: 0;
+    display: flex;
+    border-top: 1px solid #F0F0F0;
+}
+
+.wpfc-box .wpfc-inner-row:first-child {
+    border-top: none;
+}
+
+.left-col {
+    width: 30%;
+}
+
+.wpfc-box .right-col {
+    width: 70%;
+}
+
+.wpfc-col {
+    margin: 0;
+    padding: 16px 16px;
+    display: flex;
+}
+
+.wpfc-col textarea,
+.wpfc-col input[type=text] {
+    width: 100%;
+    border: 1px solid #D9D9D9;
+    border-radius: 0;
+    background: #F9F9F9;
+}
+
+.wpfc-col input[type=date],
+.wpfc-col input[type=number],
+.wpfc-col input[type=email],
+.wpfc-col select {
+    width: 50%;
+    border: 1px solid #D9D9D9;
+    border-radius: 0;
+    background: #F9F9F9;
+}
+
+.wpfc-col .iaf-checkbox-container {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.wpfc-col input[type=checkbox],
+.wpfc-col input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+
+/* On mouse-over, add a grey background color */
+.iaf-checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+/* When the checkbox is checked, add a blue background */
+.iaf-checkbox-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+/* Show the checkmark when checked */
+.iaf-checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+/* Style the checkmark/indicator */
+.iaf-checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.wpfc-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.wpfc-title span,
+span.wpfc-details {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    display: block;
+    margin: 8px 0;
+    color: gray;
+}
+
+.wpfc-innercol {
+    width: calc( 100% / 3 );
+    display: inline-block;
+    padding-right: 25px; 
+}
+
+@media screen and (max-width: 992px) {
+
+}
+  
+@media screen and (max-width: 600px) {
+    .wpfc-box .wpfc-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .wpfc-box .wpfc-inner-row {
+        flex-wrap: wrap;
+        padding-top: 16px
+    }
+
+    .wpfc-col {
+        padding-top: 0;
+    }
+
+    .left-col {
+        width: 100%;
+    }
+    
+    .wpfc-box .right-col {
+        width: 100%;
+    }
+
+    .wpfc-col {
+        display: block;
+    }
+
+    .wpfc-innercol {
+        width: 100%;
+        display: block;
+    }
+
+    .wpfc-padding-top {
+        padding-top: 16px;
+    }
+}
+
+.column-cycle {
+    width: 80px;
+}
+
+.column-duration {
+    width: 100px
+}
+
+.column-picture,
+.column-logo {
+    width: 60px;
+}

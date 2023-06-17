@@ -1,0 +1,96 @@
+# Translation of Themes - News Hunt in Italian
+# This file is distributed under the same license as the Themes - News Hunt package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-09-15 13:58:33+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: it\n"
+"Project-Id-Version: Themes - News Hunt\n"
+
+#. Description of the theme
+#, gp-priority: high
+msgid "News Hunt is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. News Hunt is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. News Hunt is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsup and documentation at https://docs.themeansar.com/docs/newsup/"
+msgstr "News Hunt il miglior tema responsive di WordPress per riviste di notizie, veloce, pulito e dall'aspetto moderno. Il tema è completamente widgetizzato, permettendo agli utenti di gestire i contenuti tramite widget facili da usare. News Hunt è adatto a quotidiani dinamici, giornali, riviste, case editrici, blog, redattori, riviste online e di gioco, portali di notizie, blog personali, testate giornalistiche, siti editoriali o di recensioni e qualsiasi sito web creativo. News Hunt è ottimizzato per la SEO, compatibile con WPML, Gutenberg, pronto per la traduzione e RTL. Anteprima dal vivo: https://demo.themeansar.com/newsup e documentazione su https://docs.themeansar.com/docs/newsup/"
+
+#. Theme Name of the theme
+#, gp-priority: high
+msgid "News Hunt"
+msgstr "News Hunt"
+
+#. Template Name of the theme
+msgid "Frontpage"
+msgstr "Homepage"
+
+#: header.php:88
+msgid "Toggle navigation"
+msgstr "Attiva/disattiva navigazione"
+
+#: header.php:22
+msgid "Skip to content"
+msgstr "Vai al contenuto"
+
+#: functions.php:94
+msgid "Front-Page Right Sidebar Section"
+msgstr "Sezione della barra laterale destra della homepage"
+
+#: functions.php:84
+msgid "Front-Page Left Sidebar Section"
+msgstr "Sezione della barra laterale sinistra della homepage"
+
+#: functions.php:52
+msgid "Top Header menu"
+msgstr "Menu dell'header in alto"
+
+#: frontpage-options.php:49
+msgid "Select category for Editor 2 Post"
+msgstr "Seleziona la categoria per l'editor 2 degli articoli"
+
+#: frontpage-options.php:48
+msgid "Category"
+msgstr "Categoria"
+
+#: frontpage-options.php:27
+msgid "Editor Post Section"
+msgstr "Sezione editor degli articoli"
+
+#. translators: placeholder replaced with string
+#: footer.php:171
+msgid "https://themeansar.com/"
+msgstr "https://themeansar.com/"
+
+#. translators: placeholder replaced with string
+#: footer.php:171
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s di %2$s."
+
+#. translators: placeholder replaced with string
+#: footer.php:165
+msgid "Proudly powered by %s"
+msgstr "Sviluppato con orgoglio da %s"
+
+#: footer.php:162
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: footer.php:15
+msgid "You missed"
+msgstr "Ti sei perso"
+
+#. Theme URI of the theme
+#, gp-priority: low
+msgid "https://themeansar.com/free-themes/news-hunt/"
+msgstr "https://themeansar.com/free-themes/news-hunt/"
+
+#. Author URI of the theme
+#, gp-priority: low
+msgid "https://themeansar.com"
+msgstr "https://themeansar.com"
+
+#. Author of the theme
+#, gp-priority: low
+msgid "Themeansar"
+msgstr "Themeansar"

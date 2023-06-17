@@ -1,0 +1,51 @@
+/* blocco-notizie.css */
+
+/* Stile per il tasto di blocco */
+.blocco-notizia {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.blocco-notizia:hover {
+  background-color: #cc0000;
+}
+
+/* Stile per il tasto di sblocco */
+.sblocca-notizia {
+  background-color: #00ff00;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.sblocca-notizia:hover {
+  background-color: #00cc00;
+}
+
+/* Stile per la lista dei blocchi */
+.lista-blocchi {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-blocchi li {
+  margin-bottom: 10px;
+}
+
+.lista-blocchi li button {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.lista-blocchi li button:hover {
+  background-color: #333333;
+}
+
