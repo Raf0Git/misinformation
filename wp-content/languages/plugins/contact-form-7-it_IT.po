@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Contact Form 7 - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-23 15:18:05+0000\n"
+"PO-Revision-Date: 2023-06-19 09:45:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,25 @@ msgstr ""
 "X-Generator: GlotPress/4.0.0-alpha.4\n"
 "Language: it\n"
 "Project-Id-Version: Plugins - Contact Form 7 - Stable (latest release)\n"
+
+#: modules/sendinblue/service.php:163
+msgid "Brevo is active on this site."
+msgstr "Brevo è attivo su questo sito."
+
+#: modules/sendinblue/contact-form-properties.php:109
+#: modules/sendinblue/service.php:30
+msgid "Brevo (formerly Sendinblue)"
+msgstr "Brevo (precedentemente Sendinblue)"
+
+#: modules/sendinblue/contact-form-properties.php:101
+#: modules/sendinblue/service.php:156
+msgid "Brevo (formerly Sendinblue) integration"
+msgstr "Integrazione con Brevo (precedentemente Sendinblue)"
+
+#: admin/includes/welcome-panel.php:153
+#: modules/sendinblue/contact-form-properties.php:297
+msgid "Brevo"
+msgstr "Brevo"
 
 #: includes/contact-form-functions.php:230
 msgid "Contact form not found."
@@ -41,6 +60,10 @@ msgstr "&#8212;Seleziona un'opzione&#8212;"
 #: modules/akismet/service.php:65
 msgid "Akismet is active on this site."
 msgstr "Akismet è attivo su questo sito."
+
+#: modules/akismet/service.php:51
+msgid "CAPTCHAs are designed to distinguish spambots from humans, and are therefore helpless against human spammers. In contrast to CAPTCHAs, Akismet checks form submissions against the global database of spam; this means Akismet is a comprehensive solution against spam. This is why we consider Akismet to be the centerpiece of the spam prevention strategy."
+msgstr "I CAPTCHA sono destinati a distinguere gli spambot dagli umani ed in più sono utili contro gli spammer umani. Rispetto ai CAPTCHA, Akismet controlla gli invii dei moduli rispetto al database globale degli spam; questo significa che Akismet è una soluzione a tutto tondo contro lo spam. Questa è la ragione per cui consideriamo Akismet il nucleo centrale della strategia di prevenzione contro lo spam."
 
 #: modules/akismet/akismet.php:302
 msgid "Learn how your data is processed."
@@ -248,8 +271,7 @@ msgstr "https://contactform7.com/stripe-integration/"
 msgid "With help from cloud-based machine learning, anti-spam services will protect your forms (%1$s). Even payment services are natively supported (%2$s)."
 msgstr "I servizi antispam proteggeranno i tuoi moduli (%1$s) con l'aiuto del machine learning basato su Cloud. Anche i servizi di pagamento sono supportati nativamente (%2$s)."
 
-#. translators: 1: link labeled 'Sendinblue', 2: link labeled 'Constant
-#. Contact'
+#. translators: 1: link labeled 'Brevo', 2: link labeled 'Constant Contact'
 #: admin/includes/welcome-panel.php:150
 msgid "Your contact forms will become more powerful and versatile by integrating them with external APIs. With CRM and email marketing services, you can build your own contact lists (%1$s and %2$s)."
 msgstr "Integrando le API esterne, i tuoi moduli di contatto saranno ancora più potenti e versatili. Con CRM e servizi di email marketing, puoi creare le tue liste di contatti (%1$se %2$s)."
@@ -334,8 +356,8 @@ msgid "Contact lists"
 msgstr "Liste di contatti"
 
 #: modules/sendinblue/contact-form-properties.php:97
-msgid "You can set up the Sendinblue integration here. For details, see %s."
-msgstr "Qui puoi impostare l'integrazione con Sendinblue. Per dettagli, guarda %s"
+msgid "You can set up the Brevo integration here. For details, see %s."
+msgstr "Qui puoi impostare l'integrazione con Brevo. Per dettagli, guarda %s."
 
 #: modules/sendinblue/service.php:212
 msgid "Save changes"
@@ -354,15 +376,6 @@ msgstr "Chiave API"
 msgid "Setup integration"
 msgstr "Impostazioni di integrazione"
 
-#: modules/sendinblue/service.php:163
-msgid "Sendinblue is active on this site."
-msgstr "Sendinblue è attivo su questo sito."
-
-#: modules/sendinblue/contact-form-properties.php:101
-#: modules/sendinblue/service.php:156
-msgid "Sendinblue integration"
-msgstr "Integrazione Sendinblue"
-
 #: admin/includes/welcome-panel.php:152
 #: modules/sendinblue/contact-form-properties.php:100
 #: modules/sendinblue/service.php:155
@@ -370,19 +383,12 @@ msgid "https://contactform7.com/sendinblue-integration/"
 msgstr "https://contactform7.com/sendinblue-integration/"
 
 #: modules/sendinblue/service.php:149
-msgid "Store and organize your contacts while protecting user privacy on Sendinblue, the leading CRM & email marketing platform in Europe. Sendinblue offers unlimited contacts and advanced marketing features."
-msgstr "Conserva e organizza i tuoi contatti proteggendo la privacy degli utenti su Sendinblue, la piattaforma di CRM e mail marketing leader in Europa. Sendinblue offre contatti illimitati e funzionalità di marketing avanzate."
+msgid "Store and organize your contacts while protecting user privacy on Brevo, the leading CRM & email marketing platform in Europe. Brevo offers unlimited contacts and advanced marketing features."
+msgstr "Conserva e organizza i tuoi contatti proteggendo la privacy degli utenti su Brevo, la piattaforma di CRM e mail marketing leader in Europa. Brevo offre contatti illimitati e funzionalità di marketing avanzate."
 
 #: modules/sendinblue/service.php:126
 msgid "You have not been authenticated. Make sure the provided API key is correct."
 msgstr "Non sei stato autenticato. Assicurati che la chiave API inserita sia corretta."
-
-#: admin/includes/welcome-panel.php:153
-#: modules/sendinblue/contact-form-properties.php:109
-#: modules/sendinblue/contact-form-properties.php:297
-#: modules/sendinblue/service.php:30
-msgid "Sendinblue"
-msgstr "Sendinblue"
 
 #: includes/mail.php:244
 msgid "Failed to attach a file. The total file size exceeds the limit of 25 megabytes."

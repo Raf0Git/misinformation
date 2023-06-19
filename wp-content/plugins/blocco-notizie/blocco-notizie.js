@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
   $('.blocco-notizia').on('click', function() {
     var postId = $(this).data('post-id');
     var bloccato = $(this).data('bloccato');
-
+	
     $.ajax({
       url: ajaxurl,
       type: 'POST',

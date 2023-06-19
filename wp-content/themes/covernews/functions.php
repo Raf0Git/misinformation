@@ -1,5 +1,105 @@
 <?php
-// Exit if accessed directly.
+function display_fact_check_button($content) {
+  // Verifica se si tratta di un articolo singolo
+  if (is_single()) {
+    $url=get_post_meta(get_the_ID(), 'link', true);
+	
+	// Ottieni l'attendibilità della notizia
+	$fact_check_result = verifyFactCheck($url);
+
+	// Aggiungi il risultato alla fine del contenuto dell'articolo
+	$content .= '<div class="fact-check-result">' . $fact_check_result . '</div>';
+  }
+
+  return $content;
+}
+add_filter('the_content', 'display_fact_check_button');
+
+// Funzione per verificare l'attendibilità della notizia
+function verifyFactCheck($url) {
+	$apiUrl = "https://factchecktools.googleapis.com/v1alpha1/claims:search";
+    $apiKey = 'AIzaSyC9vvEK6tvlyVeRrCH5SO61TP6qyQaadX8'; // Inserisci la tua chiave API qui
+	
+	$params = array(
+		"key" => $apiKey,
+		"query" => $url
+	);
+
+	$queryString = http_build_query($params);
+	$requestUrl = $apiUrl . "?" . $queryString;
+
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $requestUrl);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+	$response = curl_exec($curl);
+	$status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+	curl_close($curl);
+
+	if ($status == 200) {
+		$data = json_decode($response, true);
+
+		if (!empty($data['claims'])) {
+			$claim = $data['claims'][0];
+			$text = $claim['text'];
+			$rating = $claim['claimReview'][0]['textualRating'];
+
+			return "L'attendibilità della notizia è: " . $rating;
+		} else {
+			return "Nessuna informazione sull'attendibilità della notizia trovata.";
+		}
+	} else {
+		return "Richiesta fallita con codice " . $status . ": " . $response;
+	}
+}
+
+function display_blocco_button($content) {
+  // Verifica se si tratta di un articolo singolo
+  if (is_singular('post') && is_user_logged_in()) {
+    $bloccato = get_post_meta(get_the_ID(), '_bloccato', true);
+	/*
+	$content .= '<script>
+			function blocco_sblocco(id, blocco) {
+				pulsante = document.querySelector(".blocco_sblocco");
+				pulsante.style.color="blue";
+				jQuery.ajax({
+				  url: "http://localhost/progetti/misinformation/bjlocco",
+				  type: "POST",
+				  data: {
+					"notizia-id": id,
+					"notizia-blocco": blocco // Inverti il valore del bloccato
+				  },
+				  success: function(response) {
+					if (response === "success") {
+					  location.reload();
+					}
+				  }
+				});
+			}
+		</script>';
+	*/
+	// Aggiungi il pulsante alla fine del contenuto dell'articolo
+	$content .='<form action="http://localhost/progetti/misinformation/blocco/" method="post" name="' . get_the_ID() . '" enctype="multipart">';
+	$content .='<input type="hidden" name="notizia-id" value="' . get_the_ID() . '" />';
+	$content .='<input type="hidden" name="user-id" value="' . get_current_user_id() . '" />';
+	$content .='<input type="submit" value="' . ($bloccato ? 'Sblocca notizia' : 'Blocca notizia') . '" />';
+	//$content .= '<button class="blocco_sblocco" onclick="blocco_sblocco(' . get_the_ID() . ',' . $bloccato . ')">' . ($bloccato ? 'Sblocca notizia' : 'Blocca notizia') . '</button>';
+  }
+
+  return $content;
+}
+add_filter('the_content', 'display_blocco_button');
+
+/*
+function nascondiNotizie() {
+	echo "ciao";
+}
+add_filter('search_link', 'nascondiNotizie');
+apply_filters( 'search_link', '');
+*/
+
+// // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }

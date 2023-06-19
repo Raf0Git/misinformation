@@ -91,8 +91,8 @@ if (!function_exists('aggiungi_script_e_css')) {
     // Aggiungi gli script e i CSS necessari
     function aggiungi_script_e_css() {
       wp_enqueue_script('jquery');
-      wp_enqueue_script('blocco-notizie-script', plugin_dir_url(__FILE__) . 'js/blocco-notizie.js', array('jquery'), '1.0', true);
-      wp_enqueue_style('blocco-notizie-style', plugin_dir_url(__FILE__) . 'css/blocco-notizie.css');
+      wp_enqueue_script('blocco-notizie-script', plugin_dir_url(__FILE__) . 'blocco-notizie.js', array('jquery'));
+      wp_enqueue_style('blocco-notizie-style', plugin_dir_url(__FILE__) . 'blocco-notizie.css');
     }
   }
   
