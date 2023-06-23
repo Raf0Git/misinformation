@@ -12,16 +12,23 @@ get_header(); ?>
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main">
 
-                        <?php
-                        while (have_posts()) : the_post(); ?>
-                            <article id="post-<?php the_ID(); ?>" <?php post_class('af-single-article'); ?>>
-                                <div class="entry-content-wrap">
-                                    <?php covernews_get_block('header'); ?>
-                                    <?php
+                  <?php
+while (have_posts()) {
+    the_post();
+    $bloccato = get_post_meta(get_the_ID(), '_bloccato', true);
 
-                                    get_template_part('template-parts/content', get_post_type());
+    if ($bloccato && $bloccato == get_current_user_id()) {
+        // Notizia bloccata per l'utente corrente, visualizza solo il titolo e il messaggio
+        echo '<h1>' . get_the_title() . '</h1>';
+        echo '<p class="notizia-bloccata">Notizia bloccata. Devi sbloccarla nella pagina Lista Blocchi per visualizzarne il contenuto.</p>';
+    } else {
+        // Notizia non bloccata, visualizza il contenuto completo
+        the_title('<h1>', '</h1>');
+        the_content();
+    }
+}
+?>
 
-                                    ?>
                                 </div>
                                 <?php
                                 $show_related_posts = esc_attr(covernews_get_option('single_show_related_posts'));
@@ -41,10 +48,7 @@ get_header(); ?>
 
                                 ?>
                             </article>
-                        <?php
-
-                        endwhile; // End of the loop.
-                        ?>
+                        
 
                     </main><!-- #main -->
                 </div><!-- #primary -->
