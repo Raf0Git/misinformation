@@ -65,7 +65,7 @@ if( ! class_exists( 'MTDI' ) ) :
 			if ( defined( 'MTDI_VERSION' ) ) {
 				$this->version = MTDI_VERSION;
 			} else {
-				$this->version = '1.1.4';
+				$this->version = '1.1.5';
 			}
 			$this->plugin_name = 'mysterythemes-demo-importer';
 
@@ -229,7 +229,7 @@ if( ! class_exists( 'MTDI' ) ) :
 				$mt_free_themes[] = $theme->slug;
 			}
 
-			$mt_diff_theme_name = array( 'swipe', 'flexible', 'ogma' );
+			$mt_diff_theme_name = array( 'swipe', 'flexible', 'ogma', 'newshive' );
 			$mt_parent_free_themes = array_merge( $mt_parent_free_themes, $mt_diff_theme_name );
 
 			$namge_change_for_pro = array( 'news-portal-elementrix', 'color-blog-dark', 'matina-news', 'swipewp', 'flexible-lite' );

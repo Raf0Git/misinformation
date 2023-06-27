@@ -14,7 +14,7 @@ class WooCommerce extends Base {
 
 	public function add_menu() {
 		if ( class_exists( 'WooCommerce' ) ) {
-			add_submenu_page( QLWAPP_DOMAIN, esc_html__( 'WooCommerce (Beta)', 'wp-whatsapp-chat' ), esc_html__( 'WooCommerce (Beta)', 'wp-whatsapp-chat' ), 'manage_options', QLWAPP_DOMAIN . '_woocommerce', array( $this, 'add_panel' ) );
+			add_submenu_page( QLWAPP_DOMAIN, esc_html__( 'WooCommerce', 'wp-whatsapp-chat' ), esc_html__( 'WooCommerce', 'wp-whatsapp-chat' ), 'manage_options', QLWAPP_DOMAIN . '_woocommerce', array( $this, 'add_panel' ) );
 		}
 	}
 

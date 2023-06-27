@@ -7,7 +7,7 @@
  * Plugin Name: Elespare
  * Description: News, Magazine and Blog Addons for Elementor (Free Widgets, Templates and Header/Footer Builder)
  * Plugin URI:  https://afthemes.com/plugins/elespare/
- * Version:     2.0.1
+ * Version:     2.0.2
  * Elementor tested up to: 3.13.3
  * Elementor Pro tested up to: 3.13.2
  * Author:      Elespare
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     // Exit if accessed directly.
     exit;
 }
-define( 'ELESPARE_VERSION', '2.0.1' );
+define( 'ELESPARE_VERSION', '2.0.2' );
 define( 'ELESPARE', __FILE__ );
 define( 'ELESPARE_DIR_PATH', plugin_dir_path( ELESPARE ) );
 define( 'ELESPARE_DIR_URL', plugin_dir_url( ELESPARE ) );

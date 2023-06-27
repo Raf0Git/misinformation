@@ -11,24 +11,24 @@ get_header(); ?>
         <div class="section-block-upper row">
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main">
-
-                  <?php
-while (have_posts()) {
-    the_post();
-    $bloccato = get_post_meta(get_the_ID(), '_bloccato', true);
-
-    if ($bloccato && $bloccato == get_current_user_id()) {
-        // Notizia bloccata per l'utente corrente, visualizza solo il titolo e il messaggio
-        echo '<h1>' . get_the_title() . '</h1>';
-        echo '<p class="notizia-bloccata">Notizia bloccata. Devi sbloccarla nella pagina Lista Blocchi per visualizzarne il contenuto.</p>';
-    } else {
-        // Notizia non bloccata, visualizza il contenuto completo
-        the_title('<h1>', '</h1>');
-        the_content();
-    }
-}
-?>
-
+						
+                        <?php
+                        while (have_posts()) : the_post();
+							//controlla se la notizia è bloccata per l'utente corrente
+							$bloccato = getBloccato(get_the_ID(), get_current_user_id());
+							?>
+                            <article id="post-<?php the_ID(); ?>" <?php post_class('af-single-article'); ?>>
+                                <div class="entry-content-wrap">
+                                    <?php 
+									//nasconde una notizia bloccata
+									if (!$bloccato) {
+										//covernews_get_block('header');
+										get_template_part('template-parts/content', get_post_type());
+									} else {?>
+										<p style="text-align:center; font-weight: bold;">Notizia bloccata. Clicca su <a style="text-decoration: underline;" href="http://localhost/progetti/misinformation/blocchi/"> Lista Blocchi </a> per sbloccarla.</p>
+									<?php
+									}
+                                    ?>
                                 </div>
                                 <?php
                                 $show_related_posts = esc_attr(covernews_get_option('single_show_related_posts'));
@@ -48,7 +48,10 @@ while (have_posts()) {
 
                                 ?>
                             </article>
-                        
+                        <?php
+
+                        endwhile; // End of the loop.
+                        ?>
 
                     </main><!-- #main -->
                 </div><!-- #primary -->

@@ -5,10 +5,9 @@ function display_fact_check_button($content) {
     $url=get_post_meta(get_the_ID(), 'link', true);
 	
 	// Ottieni l'attendibilità della notizia
-	$fact_check_result = verifyFactCheck($url);
+	$fact_check_result = get_evaluation($url);
 
-	// Aggiungi il risultato alla fine del contenuto dell'articolo
-	$content .= '<div class="fact-check-result">' . $fact_check_result . '</div>';
+	$content .= $fact_check_result;
   }
 
   return $content;
@@ -45,9 +44,9 @@ function verifyFactCheck($url) {
 			$text = $claim['text'];
 			$rating = $claim['claimReview'][0]['textualRating'];
 
-			return "L'attendibilità della notizia è: " . $rating;
+			return trim($rating); //"L'attendibilità della notizia è: " . 
 		} else {
-			return "Nessuna informazione sull'attendibilità della notizia trovata.";
+			return "Nessun risultato";
 		}
 	} else {
 		return "Richiesta fallita con codice " . $status . ": " . $response;
@@ -57,39 +56,124 @@ function verifyFactCheck($url) {
 function display_blocco_button($content) {
   // Verifica se si tratta di un articolo singolo
   if (is_singular('post') && is_user_logged_in()) {
-    $bloccato = get_post_meta(get_the_ID(), '_bloccato', true);
-	/*
-	$content .= '<script>
-			function blocco_sblocco(id, blocco) {
-				pulsante = document.querySelector(".blocco_sblocco");
-				pulsante.style.color="blue";
-				jQuery.ajax({
-				  url: "http://localhost/progetti/misinformation/bjlocco",
-				  type: "POST",
-				  data: {
-					"notizia-id": id,
-					"notizia-blocco": blocco // Inverti il valore del bloccato
-				  },
-				  success: function(response) {
-					if (response === "success") {
-					  location.reload();
-					}
-				  }
-				});
-			}
-		</script>';
-	*/
+    //controlla se la notizia è bloccata per l'utente corrente
+	$bloccato = getBloccato(get_the_ID(), get_current_user_id());
+	
 	// Aggiungi il pulsante alla fine del contenuto dell'articolo
-	$content .='<form action="http://localhost/progetti/misinformation/blocco/" method="post" name="' . get_the_ID() . '" enctype="multipart">';
-	$content .='<input type="hidden" name="notizia-id" value="' . get_the_ID() . '" />';
-	$content .='<input type="hidden" name="user-id" value="' . get_current_user_id() . '" />';
-	$content .='<input type="submit" value="' . ($bloccato ? 'Sblocca notizia' : 'Blocca notizia') . '" />';
-	//$content .= '<button class="blocco_sblocco" onclick="blocco_sblocco(' . get_the_ID() . ',' . $bloccato . ')">' . ($bloccato ? 'Sblocca notizia' : 'Blocca notizia') . '</button>';
+	$content .= '<form action="http://localhost/progetti/misinformation/blocco/" method="post" name="' . get_the_ID() . '" enctype="multipart">';
+	$content .= '<input type="hidden" name="notizia-id" value="' . get_the_ID() . '" />';
+	$content .= '<input type="hidden" name="user-id" value="' . get_current_user_id() . '" />';
+	$content .= '<input type="submit" value="' . ($bloccato ? 'Sblocca notizia' : 'Blocca notizia') . '" /></form>';
   }
 
   return $content;
 }
 add_filter('the_content', 'display_blocco_button');
+
+//restituisce una valutazione unica tra 1 e 5 unendo tutte le singole valutazioni
+function get_evaluation($url) {
+	//vettore con le valutazioni
+  	$valutazioni=array('1'=>'Notizia inaffidabile', '2'=>'Notizia probabilmente inaffidabile', '3'=>'Notizia né affidabile né inaffidabile', '4'=>'Notizia probabilmente affidabile', '5'=>'Notizia affidabile');
+	
+	//vettore con i pesi dei vari metodi
+	$pesi=array('google'=>30, 'blacklist'=>20);
+	$tot_val=array_sum($pesi);
+	$val=0;
+	$result='';
+	
+	$google=get_fact_check_evaluation($url); //valore 30
+	if ($google==0) $tot_val -= $pesi['google'];
+	$blacklist=get_blacklist_evaluation($url); //valore 20
+	if ($blacklist==0) $tot_val -= $pesi['blacklist'];
+	
+	if($tot_val!=0) {
+		$val=$google*($pesi['google']/$tot_val)+$blacklist*($pesi['blacklist']/$tot_val);
+	}
+	
+	
+	// Aggiungi il risultato alla fine del contenuto dell'articolo
+	if($val == 0) {
+		$result .= '<div class="fact-check-result" style="text-align:center; font-weight: bold;">Nessuna informazione sull\'attendibilità della notizia trovata</div>';
+	} else {
+		$result .= '<div class="fact-check-result" style="text-align:center; font-weight: bold;">Valutazione: ' . $val . ' su 5. ' . $valutazioni[$val] . '</div>';
+	}
+	return $result;
+}
+
+function get_fact_check_evaluation($url) {
+	$google=strtolower(verifyFactCheck($url));
+	
+	$result=0;
+	//possibili valutazioni ottenibili dai seguenti siti: https://www.open.online/, https://facta.news/, https://www.bufale.net/
+	$map = array('falso' => 1, 'alterat' => 1, 'notizia falsa' => 1, 'immagine modificata' => 1, 'video modificato' => 1, 'disinformazione' => 1, 'allarmismo' => 1, 'complottismo' => 1, 'non condividere' => 1, 'truffa' => 1, 'smentit' => 1, 'fake news' => 1, 'parzialmente fals' => 2, 'satira' => 2, 'notizia satirica' => 2, 'satir' => 2, 'senza prove' => 2, 'nessuna fonte' => 2, 'nessuna prova' => 2, 'nessuna fonte' => 2, 'nì' => 2, 'contesto mancante' => 3, 'fuori contesto' => 3, 'notizia imprecisa' => 3, 'notizia vecchia' => 3, 'precisazioni' => 4, 'vero' => 5, 'notizia vera' => 5, 'fact checking' => 0, 'editoriale' => 0, 'approfondimento' => 0, 'analisi in corso' => 0, 'indagini in corso' => 0, 'versioni a confronto' => 0, "nessun risultato" => 0, 'richiesta fallita con codice' => 0);
+	foreach ($map as $keyword => $value) {
+		if (strpos($google, $keyword) !== false) {
+			$result=$value;
+			break;
+		}
+	}
+	
+	return $result;
+}
+
+function get_blacklist_evaluation($url) {
+	create_Blacklist();
+	
+	if (inBlacklist($url)) {
+		return 2;
+	} else {
+		return 4;
+	}
+}
+
+function create_Blacklist() {
+	$blacklist_file='blacklist.json';
+	if (file_exists($blacklist_file))
+		return true;
+	
+	$blacklist = 'https://www.bufale.net/the-black-list-la-lista-nera-del-web/';
+	$page = file_get_contents($blacklist); // Fetch the HTML content of the page
+	
+	//estraggo i link
+	preg_match_all('/<li><a href="([^"]*)"/', $page, $links);
+	$links=$links[1];
+	//elimino http, https e prendo solo il dominio
+	foreach ($links as &$link) {
+		$link = preg_replace('/^http[s]*:\/\//', "", $link);
+
+		//prendo solo il dominio
+		$dominio = explode("/", $link)[0];
+		if($dominio != "www.facebook.com" && $dominio != "twitter.com") {
+			$link=$dominio;
+		}
+	}
+	
+	//salvo i link su un file
+	return file_put_contents($blacklist_file, json_encode($links, JSON_PRETTY_PRINT));
+}
+
+function inBlacklist($url) {
+	$blacklist_file='blacklist.json';
+	$links=json_decode(file_get_contents($blacklist_file), true);
+	foreach ($links as $link) {
+		if (str_contains($url, $link)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function getBloccato($post, $user) {
+	$bloccato=false;
+	$blocchi = get_post_meta($post, '_bloccato', false);
+	foreach ($blocchi as $blocco) {
+		if ($blocco == $user) {
+			$bloccato=true;
+			break;
+		}
+	}
+	return $bloccato;
+}
 
 /*
 function nascondiNotizie() {

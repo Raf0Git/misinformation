@@ -61,3 +61,15 @@
 2023-6-19 12:47:57 - Starting rcp_check_member_counts() cron job.
 2023-6-19 12:47:57 - Exiting rcp_check_member_counts() - counts have already been added today.
 2023-6-19 12:47:57 - Starting rcp_mark_abandoned_payments() cron job.
+2023-6-25 19:11:10 - Starting rcp_check_for_expired_users() cron job.
+2023-6-25 19:11:10 - Starting rcp_check_for_soon_to_expire_users() cron job.
+2023-6-25 19:11:10 - Starting rcp_check_member_counts() cron job.
+2023-6-25 19:11:10 - Starting rcp_mark_abandoned_payments() cron job.
+2023-6-26 16:48:13 - Starting rcp_check_for_expired_users() cron job.
+2023-6-26 16:48:13 - Starting rcp_check_for_soon_to_expire_users() cron job.
+2023-6-26 16:48:13 - Starting rcp_check_member_counts() cron job.
+2023-6-26 16:48:14 - Starting rcp_mark_abandoned_payments() cron job.
+2023-6-27 12:47:02 - Starting rcp_check_for_expired_users() cron job.
+2023-6-27 12:47:02 - Starting rcp_check_for_soon_to_expire_users() cron job.
+2023-6-27 12:47:02 - Starting rcp_check_member_counts() cron job.
+2023-6-27 12:47:02 - Starting rcp_mark_abandoned_payments() cron job.

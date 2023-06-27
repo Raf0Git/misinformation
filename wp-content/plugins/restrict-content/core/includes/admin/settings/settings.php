@@ -38,7 +38,6 @@ function rcp_settings_page() {
 			'disable_trial_free_subs' => 0,
 			'email_header_img'      => '',
 			'email_header_text'     => __( 'Hello', 'rcp' ),
-			'stripe_webhooks'      => get_stripe_webhooks(),
 	);
 
 	$rcp_options = wp_parse_args( $rcp_options, $defaults );
@@ -73,9 +72,6 @@ function rcp_settings_page() {
 			<a href="#emails" id="emails-tab" class="nav-tab"><?php _e( 'Emails', 'rcp' ); ?></a>
 			<a href="#invoices" id="invoices-tab" class="nav-tab"><?php _e( 'Invoices', 'rcp' ); ?></a>
 			<a href="#misc" id="misc-tab" class="nav-tab"><?php _e( 'Misc', 'rcp' ); ?></a>
-			<?php if ( isset( $_GLOBALS['rcp_requirements_check'] ) && $GLOBALS['rcp_requirements_check']->is_common_initialized ) : ?>
-				<a href="#licenses" id="licenses-tab" class="nav-tab"><?php _e( 'Licenses', 'rcp' ); ?></a>
-			<?php endif; ?>
 		</h2>
 		<?php if ( false !== $_REQUEST['updated'] ) : ?>
 			<div class="updated fade"><p><strong><?php _e( 'Options saved', 'rcp' ); ?></strong></p></div>
@@ -418,32 +414,6 @@ function rcp_settings_page() {
 										<input class="stripe_settings__descriptor" type="text" id="rcp_settings[statement_descriptor_suffix]" name="rcp_settings[statement_descriptor_suffix]" value="<?php if( isset( $rcp_options['statement_descriptor_suffix'] ) ) echo $rcp_options['statement_descriptor_suffix']; ?>" />
 										<p class="description"><?php _e( 'This allows you to add a suffix to your statement descriptor. <strong>Note:</strong> The suffix will override the Statement descriptor.', 'rcp' ); ?></p>
 										<div class="rcp__notification--inline"><?php _e( '<strong>Note:</strong> The suffix will override the Statement descriptor.', 'rcp' ); ?></div>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<label for="rcp_settings[stripe_webhooks]"><?php _e( 'Stripe Webhooks', 'rcp' ); ?></label>
-									</th>
-									<td>
-										<?php
-										$stripe_webhooks = $rcp_options[ 'stripe_webhooks' ] ?? [];
-										$webhooks_str = '';
-										if ( isset( $rcp_options['stripe_webhooks'] ) ) {
-											$size = count( $stripe_webhooks );
-											for ( $i = 0; $i < $size; $i++ ) {
-												if( $i === $size-1 ) {
-													// We don't need a new line in the last item.
-													$webhooks_str .= $stripe_webhooks[ $i ];
-												}
-												else{
-													$webhooks_str .= $stripe_webhooks[ $i ] . "\r\n";
-												}
-											}
-										}
-
-										?>
-										<textarea name="rcp_settings[stripe_webhooks]" id="stripe_webhooks" cols="100" rows="8"><?php echo esc_attr( $webhooks_str ); ?></textarea>
-										<p class="description"><?php _e( 'Here you can add any missing webhook that is not registered in RCP.', 'rcp' ); ?></p>
 									</td>
 								</tr>
 								<tr class="rcp-settings-gateway-stripe-key-row">
@@ -1257,65 +1227,9 @@ function rcp_settings_page() {
 								<span class="description"><?php _e( 'Check this box if you would like to enable Free subscriptions switching.', 'rcp' ); ?></span>
 							</td>
 						</tr>
-						<tr valign="top">
-							<th>
-								<label for="telemetry-active"><?php _e( 'Telemetry "Opt In" / "Opt Out"', 'rcp' ); ?></label>
-							</th>
-							<td>
-								<?php
-								$container = Telemetry::instance()->container();
-								$opt_in_status_value = $container->get( Status::class )->get();
-								?>
-								<label for="active"><input type="radio" value="1" name="opt-in-status-settings" id="telemetry-active" <?php checked( '1', $opt_in_status_value ); ?>/>Active</label><br/>
-								<label for="inactive"><input type="radio" value="0" name="opt-in-status-settings" id="telemetry-inactive" <?php checked( '2', $opt_in_status_value ); ?>/>Inactive</label><br/>
-								<label for="mixed"><input type="radio" value="3" name="opt-in-status-settings" id="telemetry-mixed" <?php checked( '3', $opt_in_status_value ); ?> disabled/>
-									Mixed - At least one plugin implementing Telemetry does not have an active opt-in status.</label>
-								<input type="hidden" name="opt-in-src" value="rcp_settings">
-							</td>
-						</tr>
 					</table>
 					<?php do_action( 'rcp_misc_settings', $rcp_options ); ?>
 				</div><!--end #misc-->
-
-				<?php if ( isset( $_GLOBALS['rcp_requirements_check'] ) && $GLOBALS['rcp_requirements_check']->is_common_initialized ) : ?>
-					<div class="tab_content" id="licenses">
-						<table class="form-table">
-							<tr valign="top">
-								<th>
-									<label for=""><?php _e( 'Restrict Content Pro', 'rcp' ); ?></label>
-								</th>
-								<td>
-									<?php
-									/**
-									 * @var $licenses_tab
-									 */
-									include Tribe__Main::instance()->plugin_path . 'src/admin-views/tribe-options-licenses.php';
-
-									/**
-									 * Allows the fields displayed in the licenses tab to be modified.
-									 *
-									 * @var array
-									 */
-									$license_fields = apply_filters( 'tribe_license_fields', $licenses_tab );
-									$key = get_option( 'pue_install_key_restrict_content_pro' );
-									if ( empty( $key ) ) {
-										$key = \RCP\PUE\Helper::DATA;
-									}
-
-									new Tribe__Field( 'pue_install_key_restrict_content_pro', $license_fields['pue_install_key_restrict_content_pro'], $key );
-
-									$pue_checker = new Tribe__PUE__Checker( 'https://pue.theeventscalendar.com/', 'restrict-content-pro', [
-											'context'     => 'plugin',
-											'plugin_name' => __( 'Restrict Content Pro', 'tribe-common' ),
-									] );
-									$pue_checker->do_license_key_javascript();
-									?>
-								</td>
-							</tr>
-						</table>
-						<?php do_action( 'rcp_licenses_settings', $rcp_options ); ?>
-					</div><!--end #licenses-->
-				<?php endif; ?>
 			</div><!--end #tab_container-->
 
 			<!-- save the options -->
@@ -1383,68 +1297,6 @@ function rcp_sanitize_settings( $data ) {
 		if ( ! empty( $data[$email_body] ) ) {
 			$data[$email_body] = wp_kses_post( $data[$email_body] );
 		}
-	}
-
-	if ( class_exists( \RCP\PUE\PUE::class  ) && \RCP\PUE\PUE::has_embedded_license() ) {
-		$key         = null;
-		$pue_checker = new Tribe__PUE__Checker( 'https://pue.theeventscalendar.com/', 'restrict-content-pro', [
-				'context'     => 'plugin',
-				'plugin_name' => __( 'Restrict Content Pro', 'tribe-common' ),
-		] );
-		if ( ! empty( $_POST['pue_install_key_restrict_content_pro'] ) ) {
-			$key = sanitize_text_field( $_POST['pue_install_key_restrict_content_pro'] );
-			update_option( 'pue_install_key_restrict_content_pro', $key );
-		} else {
-			delete_option( 'pue_install_key_restrict_content_pro' );
-		}
-
-		$pue_checker->check_for_updates( [], true );
-
-		$query_args = $pue_checker->get_validate_query();
-
-		$query_args['key'] = sanitize_text_field( $key );
-
-		$pue_checker->license_key_status( $query_args );
-	}
-
-	// Sanitize Stripe Webhooks
-	if( isset( $data['stripe_webhooks'] ) ) {
-		// If we have the settings in place that means that we don't need to parse the textarea field.
-		if( ! is_array( $data['stripe_webhooks'] ) ) {
-			$webhooks = str_replace( "\r", '', $data['stripe_webhooks'] ); // Remove carriage return.
-			$new_webhooks = [];
-			// Extract and sanitize the values.
-			$webhooks_sanitized = array_map( function($item ) {
-				return sanitize_text_field( $item );
-			}
-					, explode("\n", $webhooks )
-			);
-		}
-		else {
-			$new_webhooks = [];
-			// Extract and sanitize the values.
-			$webhooks_sanitized = array_map( function($item ) {
-				return sanitize_text_field( $item );
-			},
-				$data['stripe_webhooks']
-			);
-		}
-
-		// Remove empty fields.
-		$size = count( $webhooks_sanitized );
-		for ($i = 0; $i < $size; $i ++) {
-			if( empty( $webhooks_sanitized[ $i ] ) ) {
-				unset( $webhooks_sanitized[ $i ]  );
-			}
-			elseif ( false === validate_stripe_webhook( $webhooks_sanitized[ $i ], true ) ) {
-				rcp_log( 'Invalid Stripe webhook. "'. $webhooks_sanitized[ $i ] . '" was provided in "RCP Settings > Payments > Stripe Webhooks"' );
-			}
-			elseif ( false === in_array( $webhooks_sanitized[ $i ], $new_webhooks ) ) { // Check for existing value.
-				$new_webhooks[] = $webhooks_sanitized[ $i ];
-			}
-		}
-
-		$data['stripe_webhooks'] = $new_webhooks;
 	}
 
 	if( ! defined('IS_PRO') ) {

@@ -9124,3 +9124,8 @@ body.dark .select2-dropdown {
   text-decoration: none;
   border-radius: 4px;
 }
+
+.fact-check-result {
+  text-align:center;
+  font-weight: bold;
+}

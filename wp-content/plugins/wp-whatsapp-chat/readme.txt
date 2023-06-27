@@ -5,17 +5,17 @@ Tags: whatsapp, whatsapp business, click to chat, Social Chat, woocommerce whats
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.2
-Stable tag: 7.0.8
+Stable tag: 7.1.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Social Chat allows your users to contact you through "WhatsApp" App WhatsApp Web or "WhatsApp Business" with a single click.
+WhatsApp Chat🔥 allows you to enhance customer engagement! Integrate "WhatsApp" or "WhatsApp Business" with a single click.
 
 == Description ==
 
 [Premium](https://quadlayers.com/portfolio/whatsapp-chat/) | [Demo](https://quadlayers.com/demo/whatsapp-chat/) | [Community](https://www.facebook.com/groups/quadlayers/)
 
-Social Chat for WordPress allows your customers to click a button and open a conversation from your website directly to your "WhatsApp" or "WhatsApp Business" phone number. This plugin includes a Whatsapp button where you can include a pre-set message, which will be automatically be the first message in the conversation.
+WhatsApp Chat for WordPress allows your customers to click a button and open a conversation from your website directly to your "WhatsApp" or "WhatsApp Business" phone number. This plugin includes a Whatsapp button where you can include a pre-set message, which will be automatically be the first message in the conversation.
 
 [youtube https://www.youtube.com/watch?v=TY4hEJjZL8Y]
 
@@ -136,6 +136,18 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 7.1.2 =
+Fix: Composer packages update
+
+= 7.1.1 =
+* Fix: WhatsApp Chat readme.txt updated
+
+= 7.1.0 =
+* Fix: WhatsApp WooCommerce Support
+
+= 7.0.9 =
+* Fix: WhatsApp WordPress link
 
 = 7.0.8 =
 * Fix: WhatsApp button available days

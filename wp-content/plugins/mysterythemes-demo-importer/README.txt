@@ -3,7 +3,7 @@ Contributors:       mysterythemes
 Tags:               mysterythemes, one click demo import, theme demos, demo, importer
 Requires at least:  4.7
 Tested up to:       6.1.1
-Stable tag:         1.1.4
+Stable tag:         1.1.5
 Requires PHP:       5.2.4
 License:            GPLv3
 License URI:        https://www.gnu.org/licenses/gpl-3.0.html
@@ -58,6 +58,9 @@ You can contribute to the source code in our [GitHub](https://github.com/mystery
 3. Finally, Import the Demo with just one click.
 
 == Changelog ==
+
+    = 1.1.5 - May 28, 2023 =
+        * Added - external theme slug.
 
     = 1.1.4 - May 19, 2023 =
         * Changed - function to support themes created by MysteryThemes using api.
@@ -131,6 +134,9 @@ You can contribute to the source code in our [GitHub](https://github.com/mystery
         * Fixed - Navigation menu issue in widget.
 
 == Upgrade Notice ==
+
+    = 1.1.5 - May 28, 2023 =
+        * Added - external theme slug.
 
     = 1.1.4 - May 19, 2023 =
         * Changed - function to support themes created by MysteryThemes using api.
