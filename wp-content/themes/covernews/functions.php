@@ -175,13 +175,12 @@ function getBloccato($post, $user) {
 	return $bloccato;
 }
 
-/*
-function nascondiNotizie() {
-	echo "ciao";
+function nascondiNotizie($where) {
+	$user=get_current_user_id();
+	return $where .= " AND wp_posts.ID NOT IN (SELECT post_id FROM wp_postmeta WHERE meta_key='_bloccato' and meta_value='$user')";
 }
-add_filter('search_link', 'nascondiNotizie');
-apply_filters( 'search_link', '');
-*/
+add_filter('posts_where', 'nascondiNotizie');
+//add_filter('search_link', 'nascondiNotizie');
 
 // // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
