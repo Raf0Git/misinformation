@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.2.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-06-24 11:13:28+0000\n"
+"PO-Revision-Date: 2023-06-28 17:51:13+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1279,8 +1279,8 @@ msgstr "Non ti è permesso aggiornare questo sito a HTTPS."
 #: wp-admin/users.php:572
 msgid "Password reset links sent to %s user."
 msgid_plural "Password reset links sent to %s users."
-msgstr[0] "Link per la reimpostazione della password inviato all'utente %s."
-msgstr[1] "Link per la reimpostazione della password inviato agli utenti %s."
+msgstr[0] "Link per la reimpostazione della password inviato a %s utente."
+msgstr[1] "Link per la reimpostazione della password inviati a %s utenti."
 
 #: wp-admin/users.php:569
 msgid "Password reset link sent."
@@ -1661,8 +1661,8 @@ msgstr "Sì, approvo questa connessione"
 #: wp-admin/authorize-application.php:170
 msgid "This will grant access to <a href=\"%1$s\">the %2$s site in this installation that you have permissions on</a>."
 msgid_plural "This will grant access to <a href=\"%1$s\">all %2$s sites in this installation that you have permissions on</a>."
-msgstr[0] "Ciò consentirà l'accesso a <a href=\"%1$s\">per %2$s blog in questa installazione per cui disponi delle autorizzazioni</a>."
-msgstr[1] "Ciò consentirà l'accesso a <a href=\"%1$s\">per %2$s blog in questa installazione per cui disponi delle autorizzazioni</a>."
+msgstr[0] "Ciò consentirà l'accesso a <a href=\"%1$s\">%2$s sito in questa installazione per cui disponi delle autorizzazioni</a>."
+msgstr[1] "Ciò consentirà l'accesso a <a href=\"%1$s\">%2$s siti in questa installazione per cui disponi delle autorizzazioni</a>."
 
 #: wp-admin/authorize-application.php:157
 msgid "Would you like to give this application access to your account? You should only do this if you trust the application in question."
@@ -1703,8 +1703,8 @@ msgstr "Aggiungi nuova password applicazione"
 #: wp-admin/user-edit.php:757
 msgid "Application passwords grant access to <a href=\"%1$s\">the %2$s site in this installation that you have permissions on</a>."
 msgid_plural "Application passwords grant access to <a href=\"%1$s\">all %2$s sites in this installation that you have permissions on</a>."
-msgstr[0] "La password dell'applicazione ti da l'accesso a <a href=\"%1$s\">per %2$s sito di questa installazione per il quale disponi dei permessi</a>."
-msgstr[1] "La password dell'applicazione ti da l'accesso a <a href=\"%1$s\">per %2$s i siti di questa installazione per i quali disponi dei permessi</a>."
+msgstr[0] "La password dell'applicazione ti dà l'accesso a <a href=\"%1$s\">%2$s sito di questa installazione per il quale disponi delle autorizzazioni</a>."
+msgstr[1] "La password dell'applicazione ti dà l'accesso a <a href=\"%1$s\">%2$s siti di questa installazione per i quali disponi delle autorizzazioni</a>."
 
 #: wp-admin/user-edit.php:745
 msgid "Application passwords allow authentication via non-interactive systems, such as XML-RPC or the REST API, without providing your actual password. Application passwords can be easily revoked. They cannot be used for traditional logins to your website."
@@ -2210,7 +2210,7 @@ msgstr "Gli aggiornamenti automatici posso essere abilitati o disabilitati per l
 #. updating WordPress.
 #: wp-admin/update-core.php:267
 msgid "<strong>Important:</strong> Before updating, please <a href=\"%1$s\">back up your database and files</a>. For help with updates, visit the <a href=\"%2$s\">Updating WordPress</a> documentation page."
-msgstr "<strong>Importante:</strong> Prima di aggiornare, <a href=\"%1$s\">fai un backup del tuo database e dei file</a>. Per informazioni sugli aggiornamenti, visita la pagina della documentazione <a href=\"%2$s\">Aggiornare WordPress</a>."
+msgstr "<strong>Importante:</strong> prima di aggiornare, <a href=\"%1$s\">fai un backup del tuo database e dei file</a>. Per informazioni sugli aggiornamenti, visita la pagina della documentazione <a href=\"%2$s\">Aggiornare WordPress</a>."
 
 #: wp-admin/customize.php:199 wp-admin/theme-install.php:421
 #: wp-admin/theme-install.php:483 wp-admin/themes.php:569
@@ -4785,13 +4785,13 @@ msgstr "Crea il tuo primo menu qui sotto."
 #. 3: Minimum required MySQL version number, 4: Current MySQL version number.
 #: wp-admin/install.php:286
 msgid "You cannot install because <a href=\"%1$s\">WordPress %2$s</a> requires MySQL version %3$s or higher. You are running version %4$s."
-msgstr "Non puoi eseguire l'installazione perché <a href=\"%1$s\">WordPress %2$s</a> richiede la versione di MySQL %3$s o superiore, invece tu stai girando con la versione %4$s."
+msgstr "Non puoi eseguire l'installazione perché <a href=\"%1$s\">WordPress %2$s</a> richiede la versione di MySQL %3$s o superiore, invece tu stai usando la versione %4$s."
 
 #. translators: 1: URL to WordPress release notes, 2: WordPress version number,
 #. 3: Minimum required PHP version number, 4: Current PHP version number.
 #: wp-admin/install.php:277
 msgid "You cannot install because <a href=\"%1$s\">WordPress %2$s</a> requires PHP version %3$s or higher. You are running version %4$s."
-msgstr "Non puoi eseguire l'installazione perché <a href=\"%1$s\">WordPress %2$s</a> richiede la versione di PHP %3$s o superiore, invece tu stai girando con la versione %4$s."
+msgstr "Non puoi eseguire l'installazione perché <a href=\"%1$s\">WordPress %2$s</a> richiede la versione di PHP %3$s o superiore, invece tu stai usando la versione %4$s."
 
 #: wp-admin/includes/class-wp-site-health.php:751
 #: wp-admin/includes/dashboard.php:1899
